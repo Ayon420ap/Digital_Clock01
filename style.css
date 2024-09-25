@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
+    color: #00ff00;
+    overflow: hidden;
+}
+
+.clock-container {
+    text-align: center;
+    border: 4px solid #00ff00;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
+    position: relative;
+    width: 90%;
+    max-width: 500px;  /* Adjusted max-width for better fit */
+    animation: pulse 2s infinite;
+}
+
+#title {
+    font-size: 1.6em;  /* Increased font size for title */
+    margin-bottom: 15px;
+}
+
+#day, #date {
+    font-size: 1.4em;  /* Increased font size for better readability */
+    margin-bottom: 10px;
+}
+
+#clock {
+    font-size: 2.2em;  /* Increased font size for better readability */
+}
+
+@media (max-width: 600px) {
+    #clock {
+        font-size: 1.7em;
+    }
+    #day, #date {
+        font-size: 1em;
+    }
+}
+
+@keyframes star {
+    0% {
+        transform: translateY(100vh);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+.star {
+    position: absolute;
+    background: white; /* Color of the stars */
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    animation: star 10s linear infinite;
+    opacity: 0.8;
+}
+
+.star:nth-child(odd) {
+    animation-duration: 12s; /* Move slower */
+}
+
+.star:nth-child(even) {
+    animation-duration: 15s; /* Move slower */
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
+    }
+    50% {
+        box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    }
+    100% {
+        box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
+    }
+}
